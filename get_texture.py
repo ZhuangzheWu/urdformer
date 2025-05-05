@@ -236,7 +236,7 @@ def get_texture(scene):
 
                 load_kitchen_texture(cropped_image, test_name, mesh_id, bbox_parts)
     else:
-        for img_path in glob.glob("images/*"):
+        for img_path in glob.glob("image_fridge/*"):
             print('image path', img_path)
             test_name = os.path.basename(img_path)[:-4]
             #############################################

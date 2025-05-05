@@ -10,7 +10,7 @@ import torchvision.transforms as transforms
 from PIL import Image
 from scipy.spatial.transform import Rotation as Rot
 import argparse
-from texture import load_texture
+# from texture import load_texture
 from utils import write_numpy
 from utils import write_urdfs
 from grounding_dino.detection import detector
@@ -593,7 +593,7 @@ def evaluate(args, with_texture=False, headless = False):
     if headless:
         physicsClient = p.connect(p.DIRECT)
     else:
-        physicsClient = p.connect(p.GUI)
+        physicsClient = p.connect(p.GUI_SERVER)
     p.setGravity(0, 0, -10)
     p.configureDebugVisualizer(1, lightPosition=(1250, 100, 2000), rgbBackground=(1, 1, 1))
 
@@ -628,7 +628,7 @@ def main():
     parser.add_argument('--texture', action='store_true', help='adding texture')
     parser.add_argument('--headless', action='store_true', help='option to run in headless mode')
     parser.add_argument('--scene_type', '--scene_type', default='cabinet', type=str)
-    parser.add_argument('--image_path', '--image_path', default='images', type=str)
+    parser.add_argument('--image_path', '--image_path', default='image_cabinet', type=str)
     parser.add_argument('--random', '--random', action='store_true', help='use random meshes from partnet?')
 
     ##################### IMPORTANT! ###############################

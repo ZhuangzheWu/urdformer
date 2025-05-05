@@ -262,7 +262,7 @@ def evaluate(args, detection_args):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-scene_type', '--scene_type', default='cabinet', type=str)
-    parser.add_argument('-image_path', '--image_path', default='images', type=str)
+    parser.add_argument('-image_path', '--image_path', default='image_cabinet', type=str)
 
     ##################### IMPORTANT! ###############################
     # URDFormer replies on good bounding boxes of parts and ojects, you can achieve this by our annotation tool (~1min label per image)
@@ -276,4 +276,5 @@ def main():
 
 
 if __name__ == "__main__":
+    
     main()

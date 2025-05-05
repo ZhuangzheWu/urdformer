@@ -4,6 +4,7 @@ import torch
 import PIL
 from diffusers import StableDiffusionDepth2ImgPipeline
 from diffusers import StableDiffusionInpaintPipeline
+from diffusers import DiffusionPipeline
 # import os
 # import contextlib
 # from io import StringIO
@@ -242,7 +243,7 @@ def is_small(bbox, thre=50):
         return False
 
 
-depth2img_pipe = StableDiffusionDepth2ImgPipeline.from_pretrained(
+depth2img_pipe = DiffusionPipeline.from_pretrained(
     "stabilityai/stable-diffusion-2-depth",
     torch_dtype=torch.float16,
 ).to("cuda")
